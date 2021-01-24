@@ -14,6 +14,7 @@ module.exports = {
         let response = {};
 
         try {
+
             const {email, password} = req.body;
 
             const user = await User.findOne({email:email});
@@ -40,7 +41,7 @@ module.exports = {
         }catch(error) {
             response.error = true;
             response.message = 'Login Not valid';
-            response.data = [];
+            response.data = error;
              
         }
 

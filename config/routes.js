@@ -19,8 +19,16 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  // admin routes begain 
+  'POST /admin/blog': 'api/BlogController.store',
+  // admin routes end here 
+
+
+
  'POST /api/auth/login' : 'api/LoginController.login',
  'POST /api/auth/register': 'api/RegisterController.register',
+ 'POST /api/user/blog': 'api/BlogController.index',
+ 'POST /api/user/blog/:slug': 'api/BlogController.show',
 
 
   /***************************************************************************
