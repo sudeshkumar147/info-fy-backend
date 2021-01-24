@@ -35,7 +35,7 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  schema: true,
+  // schema: true,
 
 
   /***************************************************************************
@@ -101,7 +101,7 @@ module.exports.models = {
   ******************************************************************************/
 
   dataEncryptionKeys: {
-    default: 'OzO6eHzflBliVa5Y6jwag4jZnROJyJuNDtQtcSVvB48='
+    default: 'EsOAt2IQ+HahfS0pdt0YikdK17u36PSb8r6qvsOw+34='
   },
 
 
