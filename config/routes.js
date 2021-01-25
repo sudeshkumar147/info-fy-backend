@@ -20,7 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   // admin routes begain 
-  'POST /admin/blog': 'api/BlogController.store',
+  'POST /admin/blog': 'admin/BlogController.store',
   // admin routes end here 
 
 
@@ -29,6 +29,8 @@ module.exports.routes = {
  'POST /api/auth/register': 'api/RegisterController.register',
  'POST /api/user/blog': 'api/BlogController.index',
  'POST /api/user/blog/:slug': 'api/BlogController.show',
+ 'POST /api/user/contact':'api/ContactController.store',
+ 'GET /api/user/contact':'api/ContactController.index',
 
 
   /***************************************************************************
