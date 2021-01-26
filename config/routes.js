@@ -28,6 +28,7 @@ module.exports.routes = {
  'POST /api/auth/login' : 'api/LoginController.login',
  'POST /api/auth/register': 'api/RegisterController.register',
  'POST /api/user/blog': 'api/BlogController.index',
+ 'POST /api/user/blog/slid': 'api/BlogController.slid',
  'POST /api/user/blog/:slug': 'api/BlogController.show',
  'POST /api/user/contact':'api/ContactController.store',
  'GET /api/user/contact':'api/ContactController.index',

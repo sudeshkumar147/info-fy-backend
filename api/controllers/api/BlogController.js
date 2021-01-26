@@ -29,6 +29,29 @@ module.exports = {
         }      
     },
 
+    slid: async (req, res) => {
+        let response = {};
+
+        try{
+            const data = await Blog.find().limit(2);
+
+            response.error = false;
+            response.message = 'Blog Data';
+            response.data = data;
+
+        }catch(error) {
+            response.error = true;
+            response.message = 'Error';
+            response.data = error
+        }
+
+        if(response.error) {
+            res.badRequest(response)
+        }else {
+            res.json(response)
+        } 
+    },
+
     show: async (req,res) => {
         let response = {};
 

@@ -7,16 +7,29 @@
 
 module.exports = {
     store: async (req, res) => {
-        const {title, slug, body, image} = req.body;
+        const {title, slug, body} = req.body;
 
         let response = {};
 
-        try {
-            const blog = await Blog.create({title:title,slug:slug,body:body,image:image}).fetch();
+        var image;        
 
+        try {
+
+            req.file('image').upload({
+                dirname: require('path').resolve(sails.config.appPath, 'assets/images')
+            }, async (err, uploadedFiles) => {
+                if (err) return res.serverError(err);
+    
+                image = uploadedFiles[0].fd.replace(/^.[\\\/]/, '');
+                image = image.split('/').pop();
+                image = 'assets/image/'+image;
+                const blog = await Blog.create({title:title,slug:slug,body:body,image:image}).fetch();         
+                
+            }); 
+            
             response.error = false;
             response.message = 'Blog Created';
-            response.data = blog;
+            // response.data = blog;
             
         }catch(error) {
             response.error = true;
